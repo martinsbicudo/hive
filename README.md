@@ -26,7 +26,7 @@ telemetry; everything runs on your Mac and lives in `~/.hive`.
   budget hits and failed runs.
 - **Board.** A web app (opened from the notch or the menu bar) to create agents, chat with them, run a kanban of
   tasks they hand to each other, and review usage.
-- **Virtual computers.** An agent can work on an isolated Linux computer (Docker; terminal, browser or full desktop)
+- **Virtual computers.** An agent can work on an isolated Linux computer (on OrbStack or Docker Desktop; terminal, browser or full desktop)
   instead of your Mac, and you can watch its screen live. Several Claude Code agents can share one computer from the
   board's Computers page; they take turns and see the same files. Anything crossing between your Mac and a virtual
   computer asks you first.
