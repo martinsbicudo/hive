@@ -1,0 +1,9 @@
+#!/bin/sh
+set -eu
+for _ in $(seq 1 50); do [ -S /tmp/.X11-unix/X1 ] && break; sleep 0.1; done
+export DISPLAY=:1 XDG_RUNTIME_DIR=/tmp/agent-runtime
+mkdir -p "$XDG_RUNTIME_DIR" && chmod 700 "$XDG_RUNTIME_DIR"
+# A stopped container has a new PID namespace; clear only Chromium's transient lock paths.
+if ! pgrep -x chromium >/dev/null 2>&1; then rm -f -- /home/agent/.config/chromium/SingletonLock /home/agent/.config/chromium/SingletonSocket /home/agent/.config/chromium/SingletonCookie; fi
+# Chromium starts with the session (same flags as Hive's open call), so later opens land in this instance.
+exec dbus-launch --exit-with-session sh -c 'printf "%s\n" "$DBUS_SESSION_BUS_ADDRESS" > /tmp/agent-runtime/dbus-address; chmod 600 /tmp/agent-runtime/dbus-address; chromium --ozone-platform=x11 --disable-gpu --no-sandbox --disable-dev-shm-usage --no-first-run --hide-crash-restore-bubble --start-maximized -- about:blank >/tmp/chromium.log 2>&1 & exec openbox-session' >/tmp/session.log 2>&1

@@ -1,0 +1,28 @@
+{
+  "brand": "Hive",
+  "tagline": "Your team of AI agents, living in the notch",
+  "brief": "A macOS notch app where developers and non-developer entrepreneurs build a team of AI agents on Claude Code or Codex. Each agent has a face, a name and a job; they work, ask before acting, sleep and wake.",
+  "adjectives": ["friendly", "capable", "organised", "awake"],
+  "criteria": "Away from the plain honeycomb and robot-head clichés, readable in the menu bar, works in one colour, reflects a team of agents.",
+  "industry": "software",
+  "nav": ["Agents", "Board", "Usage"],
+  "brand_color": "#F5B23D",
+  "greyscale": false,
+  "designer": "Hive",
+  "round": 2,
+  "concepts": [
+    {
+      "name": "Team stack",
+      "symbol": "svg/hive-symbol-color.svg",
+      "lockup": "svg/hive-horizontal-color.svg",
+      "idea": "Three agent cells stacked like the avatars in the collapsed notch — a hive is a team.",
+      "rationale": [
+        "Mirrors the product: the notch shows your working agents exactly like this",
+        "Front cell is the one at work; the ones behind are ready",
+        "Real cut-out gaps, so it works in one colour, reversed and at menu-bar size"
+      ]
+    }
+  ],
+  "recommendation": "Team stack — chosen. Honey front cell on graphite, with two deeper honey tones for depth.",
+  "next_steps": ["Apply to the app icon, menu bar, notch and board", "Use the stack as the loading/working motif"]
+}

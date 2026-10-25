@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="referrer" content="no-referrer" />
+    <title>Hive · Virtual computer</title>
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="screen.css" />
+    <script type="module" src="screen.js"></script>
+  </head>
+  <body>
+    <main id="surface" aria-label="Virtual computer screen"></main>
+    <div id="status" data-state="connecting" role="status" aria-live="polite">
+      <span class="dot"></span>
+      <span id="message">Connecting to the virtual computer…</span>
+    </div>
+  </body>
+</html>

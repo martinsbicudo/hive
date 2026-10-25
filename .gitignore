@@ -1,0 +1,15 @@
+node_modules/
+build/
+.build/
+web/dist/
+.DS_Store
+scripts/signing.env
+
+# graft's local graph cache — regenerable, not committed (run `graft build`).
+/graft/
+.claude/
+
+# Maintainer's own notes and plans, kept out of the repository.
+AGENTS.local.md
+STATUS.md
+docs/PLAN.md

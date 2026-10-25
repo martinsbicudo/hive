@@ -1,0 +1,9 @@
+#!/bin/sh
+# Runs as the agent user once the screen is up.
+set -eu
+for _ in $(seq 1 50); do [ -S /tmp/.X11-unix/X1 ] && break; sleep 0.1; done
+export DISPLAY=:1 XDG_RUNTIME_DIR=/tmp/agent-runtime
+mkdir -p "$XDG_RUNTIME_DIR" && chmod 700 "$XDG_RUNTIME_DIR"
+# A stopped container has a new PID namespace; clear only Chromium's transient lock paths.
+if ! pgrep -x chromium >/dev/null 2>&1; then rm -f -- /home/agent/.config/chromium/SingletonLock /home/agent/.config/chromium/SingletonSocket /home/agent/.config/chromium/SingletonCookie; fi
+exec dbus-launch --exit-with-session sh -c 'printf "%s\n" "$DBUS_SESSION_BUS_ADDRESS" > /tmp/agent-runtime/dbus-address; chmod 600 /tmp/agent-runtime/dbus-address; exec startxfce4' >/tmp/session.log 2>&1

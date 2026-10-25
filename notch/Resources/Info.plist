@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleName</key>
+	<string>Hive</string>
+	<key>CFBundleDisplayName</key>
+	<string>Hive</string>
+	<key>CFBundleIdentifier</key>
+	<string>local.hive.app</string>
+	<key>CFBundleExecutable</key>
+	<string>Hive</string>
+	<key>CFBundlePackageType</key>
+	<string>APPL</string>
+	<key>CFBundleShortVersionString</key>
+	<string>0.1.0</string>
+	<key>CFBundleVersion</key>
+	<string>__BUILD__</string>
+	<key>LSMinimumSystemVersion</key>
+	<string>26.0</string>
+	<key>LSUIElement</key>
+	<true/>
+	<key>LSApplicationCategoryType</key>
+	<string>public.app-category.productivity</string>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsLocalNetworking</key>
+		<true/>
+	</dict>
+	<key>NSAppleEventsUsageDescription</key>
+	<string>Hive's Mail, Calendar and Messages connectors control those apps for the agents you give them to. Reading mail and events happens on request; every email, event and iMessage waits for you to allow it.</string>
+	<key>NSHumanReadableCopyright</key>
+	<string>Local build. No telemetry.</string>
+</dict>
+</plist>

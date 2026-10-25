@@ -1,0 +1,6 @@
+#!/bin/sh
+set -eu
+file=$(mktemp /tmp/shot-XXXXXX.png)
+DISPLAY=:1 scrot -o "$file" >/dev/null 2>&1
+cat "$file"
+rm -f "$file"

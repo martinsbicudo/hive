@@ -1,0 +1,7 @@
+#!/bin/sh
+# Runs as the vnc user. The daemon has written /run/vnc/passwd and /run/vnc/tokens beforehand.
+set -eu
+[ -s /run/vnc/passwd ] && [ -s /run/vnc/tokens ] || { echo "hive-screen: secrets missing" >&2; exit 1; }
+Xvnc :1 -localhost -rfbport 5900 -geometry 1440x900 -depth 24 -SecurityTypes VncAuth \
+  -PasswordFile /run/vnc/passwd -AlwaysShared -ac >/tmp/xvnc.log 2>&1 &
+exec websockify --token-plugin TokenFile --token-source /run/vnc/tokens 0.0.0.0:6080 >/tmp/websockify.log 2>&1
